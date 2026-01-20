@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RetroTracker Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css" />
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/libopenmpt.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/chiptune2.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="player-container">
+        <h1 class="glow-text">RetroTracker</h1>
+        
+        <div class="visualizer-container">
+            <canvas id="visualizer"></canvas>
+            <div class="status-overlay" id="status">Waiting for file...</div>
+        </div>
+
+        <div class="metadata">
+            <h2 id="song-title">No Song Loaded</h2>
+            <p id="song-info">-- / --</p>
+        </div>
+
+        <div class="controls">
+            <button id="btn-play" class="control-btn" disabled>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button id="btn-pause" class="control-btn" disabled>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button id="btn-stop" class="control-btn" disabled>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h12v12H6z"/></svg>
+            </button>
+        </div>
+
+        <div class="file-upload">
+            <label for="file-input" class="custom-file-upload">
+                Load .IT File
+            </label>
+            <input type="file" id="file-input" accept=".it,.xm,.mod,.s3m" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
